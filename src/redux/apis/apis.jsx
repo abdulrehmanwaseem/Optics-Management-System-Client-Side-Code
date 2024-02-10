@@ -15,7 +15,7 @@ const queryStringGenerator = (url, filters) => {
 export const apis = createApi({
   reducerPath: "apis",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:3000/api/v1/",
+    baseUrl: "https://optics-management-system.onrender.com/api/v1/",
   }),
   tagTypes: ["Optics"],
   keepUnusedDataFor: 0.01,

@@ -68,8 +68,20 @@ const Layout = () => {
           </div>
         </div>
       </div>
-      <div className="w-full h-[92vh]">
+      <div className="relative w-full h-[92vh]">
         <Outlet />
+        <span className="flex mb-2 px-6 justify-between items-center absolute bottom-0 right-0 shadow-slate-300 bg-slate-600 text-amber-400 w-full py-3">
+          <code className="font-xs">
+            Created By Senior Developer: Abdul Rehman
+          </code>
+          <span className="flex gap-6">
+            <code className="font-xs ">Contact On: +92 311 811 4805</code>
+            <span className="border-2 -mx-2 border-gray-400"></span>
+            <code className="font-xs">
+              Email On: abdulrehman.code1@gmail.com
+            </code>
+          </span>
+        </span>
       </div>
     </div>
   );
