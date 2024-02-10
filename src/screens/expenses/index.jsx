@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import DataTable from "../../components/DataTable";
 import {
-  useCreateCompaniesMutation,
-  useDeleteCompaniesMutation,
-  useGetCompaniesQuery,
-  useUpdateCompaniesMutation,
+  useCreateExpensesMutation,
+  useDeleteExpensesMutation,
+  useGetExpensesQuery,
+  useUpdateExpensesMutation,
 } from "../../redux/apis/apis";
 
-const Companies = () => {
+const Expenses = () => {
   const [filters, setFilters] = useState({
     sort: 1,
     sortBy: "_id",
@@ -17,12 +17,12 @@ const Companies = () => {
     perPage: 5,
   });
 
-  const { data: companies = {} } = useGetCompaniesQuery(filters);
-  const { data = [], results } = companies;
+  const { data: accounts = {} } = useGetExpensesQuery(filters);
+  const { data = [], results } = accounts;
 
-  const [createCompanies] = useCreateCompaniesMutation();
-  const [updateCompanies] = useUpdateCompaniesMutation();
-  const [deleteCompanies] = useDeleteCompaniesMutation();
+  const [createExpenses] = useCreateExpensesMutation();
+  const [updateExpenses] = useUpdateExpensesMutation();
+  const [deleteExpenses] = useDeleteExpensesMutation();
 
   const columnData = [
     {
@@ -34,24 +34,28 @@ const Companies = () => {
       title: "Account Name",
       accessor: "name",
     },
+    {
+      title: "Account Number",
+      accessor: "expenseType",
+    },
   ];
   const modalsName = {
-    form: "Companies",
+    form: "Expense",
     extraModals: {},
   };
   const modalsTitle = {
-    create: "Create Companies Record",
-    update: "Update Companies Details!",
-    delete: "Delete Companies",
+    create: "Create Expense Record",
+    update: "Update Expense Details!",
+    delete: "Delete Expense",
     extraModalTitle: {},
   };
   return (
     <DataTable
       data={data}
       totalRecords={results}
-      createRecords={createCompanies}
-      updateRecords={updateCompanies}
-      deleteRecords={deleteCompanies}
+      createRecords={createExpenses}
+      updateRecords={updateExpenses}
+      deleteRecords={deleteExpenses}
       columnData={columnData}
       filters={filters}
       setFilters={setFilters}
@@ -62,4 +66,4 @@ const Companies = () => {
   );
 };
 
-export default Companies;
+export default Expenses;

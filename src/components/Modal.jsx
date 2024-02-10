@@ -6,6 +6,11 @@ import ConfirmationModal from "./ConfirmationModal";
 import PrescriptionDetails from "../screens/customers/PrescriptionDetails";
 import PrescriptionModal from "../screens/customers/PrescriptionModal";
 import OwnerAccountModal from "../screens/ownerAccount/OwnerAccountModal";
+import AccountModal from "../screens/accounts/AccountModal";
+import CompaniesModal from "../screens/companies/CompaniesModal";
+import ExpenseModal from "../screens/expenses/ExpenseModal";
+import ItemModal from "../screens/items/ItemModal";
+import VenderModal from "../screens/venders/VenderModal";
 
 const Modal = () => {
   const dispatch = useDispatch();
@@ -47,6 +52,21 @@ const checkModal = (name) => {
       break;
     case "ownerAccount":
       component = <OwnerAccountModal />;
+      break;
+    case "Account":
+      component = <AccountModal />;
+      break;
+    case "Companies":
+      component = <CompaniesModal />;
+      break;
+    case "Expense":
+      component = <ExpenseModal />;
+      break;
+    case "Item":
+      component = <ItemModal />;
+      break;
+    case "Vender":
+      component = <VenderModal />;
   }
   return component;
 };

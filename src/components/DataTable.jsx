@@ -121,6 +121,15 @@ const DataTable = ({
   //   calculatePageNumbers();
   // }, [totalRecords, filters.perPage]);
 
+  // Helper function to get nested property value
+  const getNestedPropertyAsWell = (obj, accessor) => {
+    return accessor.split(".").reduce((nestedObj, key) => {
+      if (nestedObj && key in nestedObj) {
+        return nestedObj[key];
+      }
+      return null;
+    }, obj);
+  };
   return (
     <>
       <div className="h-16 mt-1 bg-slate-600 flex items-center w-full px-4 justify-between">
@@ -207,7 +216,12 @@ const DataTable = ({
           {data?.data?.map((value, index) => (
             <tr key={index}>
               {columnData.map(
-                (val, i) => !val.hide && <td key={i}>{value[val.accessor]}</td>
+                (val, i) =>
+                  !val.hide && (
+                    <td key={i}>
+                      {getNestedPropertyAsWell(value, val?.accessor)}
+                    </td>
+                  )
               )}
               <td>{actionsRow(value)}</td>
             </tr>
