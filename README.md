@@ -1,8 +1,25 @@
-# React + Vite
+# Optics Management System (Client Side)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![CRUD Operations](https://img.shields.io/badge/CRUD-Based-success)
 
-Currently, two official plugins are available:
+This repository contains the **client-side code** for an **Optics Management System**. The system is built with basic **CRUD operations** for managing items within the optics inventory.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- **Add New Items**: Create new inventory records.
+- **View Items**: Retrieve a list of all items.
+- **Update Items**: Edit item details.
+- **Delete Items**: Remove items from the system.
+- 
+## Tech Stack
+
+- **React**: Frontend library for building the user interface and managing client-side logic.
+- **MongoDB**: Database for storing item records.
+- **Express.js**: Framework for handling server-side routes and APIs.
+- **Node.js**: Backend runtime for server-side operations.
+
+This now includes both the frontend (React) and backend technologies. Let me know if you'd like any more changes!
+
+## License
+
+This project is open-source and available under the [MIT License](./LICENSE).
